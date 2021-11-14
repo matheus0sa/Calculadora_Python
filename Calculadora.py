@@ -14,7 +14,8 @@ def operacao (opcao ,num1 : int , num2 : int):
         return num1 * num2 
     if opcao == '4':
         operador = '/'
-        return num1 / num2 
+        if num2 != 0:
+            return num1 / num2 
 
 operador = '+'
     
@@ -44,5 +45,8 @@ while True:
         print('Formato de número inválido')
         continue
     resultado = operacao(opcao, num1, num2)
-
-    print(f'\n{num1} {operador} {num2} = {resultado}')
+    
+    if operador == '/' and num2 == 0:
+        print("\nNão é possível dividir por 0")
+    else:
+        print(f'\n{num1} {operador} {num2} = {resultado}')
